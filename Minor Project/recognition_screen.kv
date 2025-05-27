@@ -1,0 +1,33 @@
+<RecognitionScreen>:
+ 
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        MDLabel:
+            id: status_label
+            font_style: "H6"
+            halign: "center"
+            theme_text_color: "Primary"
+            text: "Attendance is Marked when Name of student is Shown, please wait till live feed loads"
+            font_size: 20
+            size_hint_y: None
+            height: dp(40)    
+
+        MDCard:
+            id:card
+            size_hint:(0.8,0.5)
+            pos_hint: {"center_x":0.5}
+            elevation: 5
+            padding: dp(10)
+            radius:[20,20,20,20]
+            Image:
+                id:camera_view
+                size_hint:(1,1)
+        
+
+        MDFillRoundFlatButton:
+            text:"Back"
+            size_hint: (None,None) 
+            size:dp(100),dp(40)
+            pos_hint: {"center_x":0.5}
+            on_release: root.switch_screen("home")   

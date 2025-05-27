@@ -1,0 +1,44 @@
+<HomeScreen>:
+
+    MDBoxLayout:
+        id:home_layout
+        orientation: 'vertical'
+        padding: dp(20)
+        spacing:dp(20)
+        pos_hint:{"center_x":0.5,"center_y":0.5}
+
+        MDLabel:
+            id:title_label
+            text:"Face Recognition Attendance System"
+            font_style:"H5"
+            halign: "center"
+            theme_text_color: 'Primary'
+
+        MDRaisedButton:
+            id:train_button
+            text: 'Train_Model'
+            size_hint_x:0.8
+            pos_hint:{"center_x":0.5}
+            md_bg_color: 0,0.6,1,1
+            elevation: 0
+            on_release:root.switch_screen("train")
+
+        MDRaisedButton:
+            id:recognize_button
+            text:"Recognize & Mark Attendance"
+            size_hint_x:0.8
+            pos_hint:{"center_x":0.5}
+            md_bg_color: 0,0.7,0.3,1
+            elevation: 0
+            on_release: root.switch_screen("recognition")
+
+        MDRaisedButton:
+            id:view_button
+            text:"View Attendance"
+            size_hint_x:0.8
+            pos_hint:{"center_x":0.5}
+            md_bg_color: 1,0.5,0,1
+            elevation: 0
+            on_release: root.switch_screen("attendance")    
+
+            

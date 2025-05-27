@@ -1,0 +1,51 @@
+<TrainModelScreen>:
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding:dp(20)
+        spacing: dp(15)
+        adaptive_height: True
+        pos_hint: {"center_x":0.5,"center_y":0.5}
+
+        MDTextField:
+            id: name_input
+            hint_text: "Enter Your Name"
+            size_hint_x:0.8
+            mode:"rectangle"
+            pos_hint:{"center_x":0.5}
+
+        MDLabel:
+            id: status_label
+            font_style: "H6"
+            halign: "center"
+            theme_text_color: "Primary"
+            text: "Waiting for Training..."
+            font_size: 20
+            size_hint_y: None
+            height: dp(40)    
+
+        MDCard:
+            id:card
+            size_hint:(0.8,0.5)
+            pos_hint: {"center_x":0.5}
+            elevation: 5
+            padding: dp(10)
+            radius:[20,20,20,20]
+            Image:
+                id:camera_view
+                size_hint:(1,1)
+        
+
+        MDRaisedButton:
+            text:"Train-Model"
+            size_hint_x:0.8
+            pos_hint:{"center_x":0.5}
+            md_bg_color: 0,0.6,1,1
+            on_release:root._train_model_()
+
+        MDRaisedButton:
+            text: 'Back'
+            size_hint_x:0.8
+            pos_hint:{"center_x":0.5}
+            md_bg_color:1,0,0,1
+            on_release:root.switch_screen("home")    
